@@ -17,7 +17,9 @@ This project demonstrates the creation of a retrieval-based question-answering c
 ## How to Run
 1. Run ingest.py: Execute the command python ingest.py to create embeddings from PDF documents and save them locally.
 
-2. Run ChainLit: Employ ChainLit to run the chatbot application. Execute chainlit run app.py to start the chatbot.
+2. **Download Model**: Run `python download_model.py` to download the 7GB Llama 2 model from Google Drive.
+
+3. Run ChainLit: Employ ChainLit to run the chatbot application. Execute chainlit run app.py to start the chatbot.
 
 ### ingest.py
 In the ingest.py script, a vector dataset is created from PDF documents using the LangChain library. This involves converting PDFs into text chunks, further splitting the text, generating text embeddings, and saving them using the FAISS vector store.
