@@ -1,0 +1,32 @@
+[project]
+# Project settings
+enable_telemetry = false
+default_expand_messages = false
+
+[UI]
+name = "MediBot"
+description = "AI-powered Lung Disease Detection & Medical Q&A"  # Use your own logo URL or local file
+primary_color = "#1e88e5"
+background_color = "#f5f8fa" 
+
+# Interface customization
+hide_cot = false
+default_collapse_content = false
+github = ""
+
+# Theme and styling
+theme = "dark"
+custom_css = "/public/styles.css"
+
+# Main styles
+[UI.styles]
+accent = "#2E7D32"
+sticky_header = true
+avatar_shape = "circle"
+
+[features]
+# Feature flags
+multi_modal = true
+prompt_playground = true
+[meta]
+generated_by = "0.7.700"

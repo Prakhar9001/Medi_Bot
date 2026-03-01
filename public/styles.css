@@ -1,0 +1,368 @@
+/* Reset and base styles */
+:root {
+    --primary-color: #2E7D32;
+    --secondary-color: #1565C0;
+    --accent-color: #FFC107;
+    --text-color: #212121;
+    --light-text: #757575;
+    --background-color: #f5f7fa;
+    --chat-user-bubble: #752e5a;
+    --chat-ai-bubble: #752e5a;
+    --header-height: 80px;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+/* Global styles */
+body {
+    font-family: 'Roboto', 'Segoe UI', sans-serif !important;
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+    line-height: 1.6 !important;
+}
+
+/* Header styling */
+.cl-logo-container {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    background-color: white !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    padding: 1rem 0 !important;
+    border-bottom: 1px solid var(--chakra-colors-chakra-border-color) !important;
+    box-shadow: var(--box-shadow) !important;
+    height: var(--header-height) !important;
+}
+
+.cl-logo-image {
+    max-height: 60px !important;
+    object-fit: contain !important;
+    transition: transform var(--transition-speed) ease !important;
+}
+
+.cl-logo-image:hover {
+    transform: scale(1.05) !important;
+}
+
+/* Chat message styling */
+.chat-message {
+    padding: 1rem 1.5rem !important;
+    border-radius: var(--border-radius) !important;
+    margin-bottom: 1rem !important;
+    box-shadow: var(--box-shadow) !important;
+    transition: all var(--transition-speed) ease !important;
+    max-width: 85% !important;
+}
+
+.user-message {
+    background-color: var(--chat-user-bubble) !important;
+    border-bottom-right-radius: 0 !important;
+    margin-left: auto !important;
+    border-left: 4px solid var(--secondary-color) !important;
+}
+
+.assistant-message {
+    background-color: var(--chat-ai-bubble) !important;
+    border-bottom-left-radius: 0 !important;
+    margin-right: auto !important;
+    border-left: 4px solid var(--primary-color) !important;
+}
+
+.message-content {
+    font-size: 1.1rem !important;
+    line-height: 1.5 !important;
+}
+
+.source-reference {
+    font-size: 0.9rem !important;
+    color: var(--light-text) !important;
+    border-left: 3px solid var(--primary-color) !important;
+    padding-left: 1rem !important;
+    margin-top: 0.5rem !important;
+    background-color: rgba(0, 0, 0, 0.03) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 4px !important;
+}
+
+/* Input area styling */
+.cl-chat-input-container {
+    background-color: white !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--box-shadow) !important;
+    margin: 1rem 0 !important;
+    transition: all var(--transition-speed) ease !important;
+    padding: 0.5rem !important;
+}
+
+.cl-chat-input-container:focus-within {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Button styling */
+button {
+    border-radius: var(--border-radius) !important;
+    transition: all var(--transition-speed) ease !important;
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+}
+
+button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+button[data-variant="solid"] {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+button[data-variant="outline"] {
+    border-color: var(--secondary-color) !important;
+    color: var(--secondary-color) !important;
+}
+
+/* File upload area */
+.cl-upload-box {
+    border: 2px dashed #ccc !important;
+    border-radius: var(--border-radius) !important;
+    padding: 2rem !important;
+    text-align: center !important;
+    transition: all var(--transition-speed) ease !important;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.cl-upload-box:hover {
+    border-color: var(--accent-color) !important;
+    background-color: rgba(255, 252, 235, 1) !important;
+    box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2) !important;
+}
+
+/* Code blocks */
+pre, code {
+    background-color: #f1f1f1 !important;
+    border-radius: 6px !important;
+    padding: 0.2em 0.4em !important;
+    font-family: 'Consolas', 'Monaco', monospace !important;
+}
+
+pre {
+    padding: 1rem !important;
+    overflow-x: auto !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    :root {
+        --header-height: 60px;
+    }
+    
+    .chat-message {
+        max-width: 95% !important;
+    }
+}
+
+/* Loading animations - updated selectors */
+.cl-chat-loader, 
+.cl-progress,
+.cl-load-more-messages,
+[class*="LoadingOverlay"],
+[class*="LoadingButton"],
+[class*="CircularProgress"] {
+    position: relative !important;
+}
+
+.cl-chat-loader::before,
+.cl-progress::before,
+.cl-load-more-messages::before,
+[class*="LoadingOverlay"]::before,
+[class*="LoadingButton"]::before,
+[class*="CircularProgress"]::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin-top: -20px !important;
+    margin-left: -20px !important;
+    border: 4px solid rgba(46, 125, 50, 0.2) !important;
+    border-radius: 50% !important;
+    border-top-color: var(--primary-color) !important;
+    animation: spinner 1s linear infinite !important;
+}
+
+/* Spinner animation */
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Message loading animation */
+.cl-message-loading,
+[class*="MessageLoading"],
+[class*="thinking"],
+[class*="Thinking"],
+[class*="loading-message"],
+[class*="LoadingMessage"] {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 15px !important;
+    background-color: var(--chat-ai-bubble) !important;
+    border-radius: var(--border-radius) !important;
+    margin: 10px 0 !important;
+    max-width: 200px !important;
+    position: relative !important;
+}
+
+.cl-message-loading::before,
+[class*="MessageLoading"]::before,
+[class*="thinking"]::before,
+[class*="Thinking"]::before,
+[class*="loading-message"]::before,
+[class*="LoadingMessage"]::before {
+    content: "MediBot is thinking..." !important;
+    font-size: 14px !important;
+    color: var(--text-color) !important;
+    margin-right: 10px !important;
+}
+
+.cl-message-loading::after,
+[class*="MessageLoading"]::after,
+[class*="thinking"]::after,
+[class*="Thinking"]::after,
+[class*="loading-message"]::after,
+[class*="LoadingMessage"]::after {
+    content: "" !important;
+    width: 40px !important;
+    height: 10px !important;
+    background-image: linear-gradient(
+        to right,
+        var(--primary-color) 0%,
+        var(--primary-color) 25%,
+        transparent 25%,
+        transparent 50%,
+        var(--primary-color) 50%,
+        var(--primary-color) 75%,
+        transparent 75%,
+        transparent 100%
+    ) !important;
+    background-size: 20px 10px !important;
+    animation: move-dots 1s infinite linear !important;
+    border-radius: 5px !important;
+}
+
+@keyframes move-dots {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 20px 0;
+    }
+}
+
+/* Pulsing dots animation as fallback */
+.cl-dot-typing,
+[class*="dot-typing"],
+[class*="DotTyping"],
+[class*="typing-indicator"],
+[class*="TypingIndicator"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 30px !important;
+}
+
+.cl-dot-typing::before,
+[class*="dot-typing"]::before,
+[class*="DotTyping"]::before,
+[class*="typing-indicator"]::before,
+[class*="TypingIndicator"]::before {
+    content: "" !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    background-color: var(--primary-color) !important;
+    animation: dot-pulse 1.5s infinite ease-in-out !important;
+    margin-right: 5px !important;
+}
+
+.cl-dot-typing::after,
+[class*="dot-typing"]::after,
+[class*="DotTyping"]::after,
+[class*="typing-indicator"]::after,
+[class*="TypingIndicator"]::after {
+    content: "" !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    background-color: var(--primary-color) !important;
+    animation: dot-pulse 1.5s 0.5s infinite ease-in-out !important;
+    margin-right: 5px !important;
+}
+
+@keyframes dot-pulse {
+    0%, 100% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Typing indicator animation */
+.cl-typing-indicator {
+    display: inline-flex !important;
+    align-items: center !important;
+    background-color: var(--chat-ai-bubble) !important;
+    padding: 10px 15px !important;
+    border-radius: var(--border-radius) !important;
+    margin-bottom: 10px !important;
+    box-shadow: var(--box-shadow) !important;
+    position: relative !important;
+}
+
+.cl-typing-indicator::after {
+    content: "MediBot is typing..." !important;
+    margin-left: 8px !important;
+    font-size: 14px !important;
+    color: var(--text-color) !important;
+}
+
+.cl-typing-indicator span {
+    width: 8px !important;
+    height: 8px !important;
+    margin: 0 2px !important;
+    background-color: var(--primary-color) !important;
+    border-radius: 50% !important;
+    display: inline-block !important;
+    opacity: 0.6 !important;
+}
+
+.cl-typing-indicator span:nth-child(1) {
+    animation: typing 1.5s infinite ease-in-out !important;
+}
+
+.cl-typing-indicator span:nth-child(2) {
+    animation: typing 1.5s 0.3s infinite ease-in-out !important;
+}
+
+.cl-typing-indicator span:nth-child(3) {
+    animation: typing 1.5s 0.6s infinite ease-in-out !important;
+}
+
+@keyframes typing {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}

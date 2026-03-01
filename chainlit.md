@@ -1,14 +1,22 @@
-# Welcome to Chainlit! 🚀🤖
+# 👩‍⚕️ MediBot – Lung Disease Assistant
 
-Hi there, Developer! 👋 We're excited to have you on board. Chainlit is a powerful tool designed to help you prototype, debug and share applications built on top of LLMs.
+Welcome to **MediBot**!  
+Your AI-powered assistant for lung disease detection and medical Q&A.
 
-## Useful Links 🔗
+---
 
-- **Documentation:** Get started with our comprehensive [Chainlit Documentation](https://docs.chainlit.io) 📚
-- **Discord Community:** Join our friendly [Chainlit Discord](https://discord.gg/ZThrUxbAYw) to ask questions, share your projects, and connect with other developers! 💬
+## 🚀 Features
+- **Ask medical questions** and get detailed answers with references.
+- **Upload X-ray images** for instant lung disease prediction.
+- **Easy-to-understand explanations** for all users.
 
-We can't wait to see what you create with Chainlit! Happy coding! 💻😊
+---
 
-## Welcome screen
+## 📝 How To Use
+1. **Type your medical question** in the chat.
+2. **Upload an X-ray image** (JPG/PNG) for disease analysis.
+3. **Receive instant, AI-powered results** and references.
 
-To modify the welcome screen, edit the `chainlit.md` file at the root of your project. If you do not want a welcome screen, just leave this file empty.
+---
+
+> _Your privacy is respected. Uploaded images are used only for analysis and are not stored._

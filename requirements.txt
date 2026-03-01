@@ -3,7 +3,11 @@ sentence_transformers
 bitsandbytes
 accelerate
 pypdf
-langchain
+langchain==0.2.7
 torch
 transformers
-shutil
+dataclasses_json>=0.6.7,<0.7.0
+Pillow>=9.0.0
+torch
+torchvision
+gdown
