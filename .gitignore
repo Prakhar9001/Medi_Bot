@@ -25,12 +25,13 @@ venv/
 ENV/
 newenv/
 
-# Model files
+# Model files — too large for Git LFS (7 GB). Use download_model.py instead.
 model/
-weights/
 
-# Vector stores
-vectorstores/
+# CNN weights and vector stores are tracked via Git LFS (*.pth, *.faiss, *.pkl)
+# Do NOT ignore these directories — LFS handles the storage.
+# weights/       <-- removed: tracked by LFS
+# vectorstores/  <-- removed: tracked by LFS
 
 # Uploads
 uploads/*

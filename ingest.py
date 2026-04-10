@@ -1,14 +1,16 @@
-from langchain.text_splitter import RecursiveCharacterTextSplitter  
-from langchain_community.document_loaders import PyPDFLoader  
-from langchain_huggingface import HuggingFaceEmbeddings  
-from langchain_community.vectorstores import FAISS  
-import shutil  
-import os  
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.document_loaders import PyPDFLoader
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
+import shutil
+import os
 
-# Data path to get information from  
-DATA_PATH = r"C:\Users\mehul\edumit\llama2-PDF-Chatbot\data\Medical_book (2).pdf"  
-# Path to store the embeddings  
-DB_FAISS_PATH = r"C:\Users\mehul\edumit\llama2-PDF-Chatbot\vectorstores\db_faiss"  
+_BASE = os.path.dirname(os.path.abspath(__file__))
+
+# Data path to get information from
+DATA_PATH = os.path.join(_BASE, "data", "Medical_book (2).pdf")
+# Path to store the embeddings
+DB_FAISS_PATH = os.path.join(_BASE, "vectorstores", "db_faiss")
 
 # Create a vector database  
 def create_vector_db():  
